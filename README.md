@@ -12,43 +12,67 @@ MTC SDK开发包需要手持设备硬件支持蓝牙4.0及其以上，并要求�
 
 ### 常用API
 
-- 设置唤醒处理回调
+- 设置监听唤醒处理回调
 
 ```
-[MESHBeaconSDK regionHander:唤醒处理类，需软件启动即初始化，如appDelegate];
+WakeUpManager
+- (void)monitorMeshWakeUp:(CLBeaconRegion *)region;
+- (void)stopMonitor:(CLBeaconRegion *)region;
+* WakeUpManager处理类，需软件启动即初始化，如appDelegate;
 ```
 ```
 * 请放置以下回调到 唤醒处理类，此类必须是随APP启动，否则无法处理后台唤醒事件
 * 唤醒失败回调
--(void)beaconManager:(MESHBeaconManager* )manager monitoringDidFailForRegion:(MESHBeaconRegion* )region withError:(NSError* )error;
+- (void)wakeUpManager:(WakeUpManager *)manager monitoringDidFailForRegion:(CLBeaconRegion *)region withError:(NSError *)error;
 * 进入唤醒区域回调
--(void)beaconManager:(MESHBeaconManager* )manager didEnterRegion:(MESHBeaconRegion* )region;
+* - (void)wakeUpManager:(WakeUpManager *)manager didEnterRegion:(CLBeaconRegion *)region;
 * 离开唤醒区域回调
--(void)beaconManager:(MESHBeaconManager* )manager didExitRegion:(MESHBeaconRegion* )region;
+- (void)wakeUpManager:(WakeUpManager *)manager didExitRegion:(CLBeaconRegion *)region;
 * 锁屏唤醒区域检测
--(void)beaconManager:(MESHBeaconManager* )manager didDetermineState:(CLRegionState)state forRegion:(MESHBeaconRegion* )region;
-* 开启唤醒状态回调
-- (void)peripheralManagerDidStartAdvertising:(CBPeripheralManager* )peripheral error:(NSError* )error;
+- (void)wakeUpManager:(WakeUpManager *)manager didDetermineState:(CLRegionState)state forRegion:(CLBeaconRegion *)region;
 ```
 
 - 广播唤醒数据
 
 ```
-[[MESHBeaconSDK Share] MESHBeaconManager] startAdvertisingWithProximityUUID:(NSUUID* )唤醒UUID major:(CLBeaconMajorValue)可选限定值1 minor:(CLBeaconMinorValue)可选限定值2 identifier:(NSString* )区域标识符，用于覆盖、或停止已有区域 power:(NSNumber* )可选距离计算参考值];
+BLEBroadcast
+设置唤醒区域
+- (void)meshWakeUp:(CLBeaconRegion *)region;
+- (void)stopMeshWakeUp:(CLBeaconRegion *)region;
+开启
+- (BOOL) start;
 ```
 
-- 唤醒APP
+- 唤醒Region设置
 
 ```
 //唤醒接入示例
-     MESHBeaconRegion* region = [[MESHBeaconRegion alloc] initWithProximityUUID:@"用于唤醒此设备的UUID" identifier:@"区域标识符，用于覆盖、或停止已有区域"];
+     CLBeaconRegion* region = [[CLBeaconRegion alloc] initWithProximityUUID:@"用于唤醒此设备的UUID" identifier:@"区域标识符，用于覆盖、或停止已有区域"];
     region.notifyOnEntry = YES;//监听进入区域
     region.notifyOnExit = YES;//离开区域时回调
     region.notifyEntryStateOnDisplay = YES;//锁屏唤醒时，是否立即扫描区域
-    [MESHBeaconSDK startMonitoringForRegions:@[region]];
+    [WakeUpManager monitorMeshWakeUp:region];
 
 ```
 
-- 广播普通数据（to do）
-- 接收普通数据（to do）
+- 广播普通数据
+
+```
+BLEBroadcast
+设置广播数据
+- (BOOL)setMeshCast:(CBUUID *)uuid data:(NSData *)data;
+- (void)removeMeshCast:(CBUUID *)uuid;
+开启
+- (BOOL) start;
+```
+
+- 接收普通数据
+
+```
+BLEScanner
+开启接收数据
+- (BOOL) start;
+- 数据接收返回
+- (void)bleScanner:(BLEScanner*)scanner  didDiscoverUUID:(CBUUID *)uuid advertisementData:(NSData *)advertisementData RSSI:(NSNumber *)RSSI;
+```
 
