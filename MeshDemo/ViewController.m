@@ -75,15 +75,14 @@
 #pragma mark - **************** Actions
 
 - (IBAction)sendButtonClicked:(UIButton *)sender {
-    [sender setTitle:@"发送中..." forState:UIControlStateNormal];
+    [sender setTitle:@"发送中(唤醒)..." forState:UIControlStateNormal];
     if (self.textForSend.text.length) {
         if (_broadCast == nil) {
             _broadCast = [[BLEBroadcast alloc] initWithDataStorage:nil];
         }
         NSData *data = [self.textForSend.text dataUsingEncoding:NSUTF8StringEncoding];
         [_broadCast setMeshCast:[self supportMeshServiceUUIDs].firstObject data:data];
-        //[_broadCast advertBeaconRegion:[[CLBeaconRegion alloc] initWithProximityUUID:[[NSUUID alloc] initWithUUIDString:@"E71E63CE-42A4-0F3D-43B3-E47C64344075"] identifier:@"regionIdentify"]];
-        //[_broadCast stopBeaconRegion:[[CLBeaconRegion alloc] initWithProximityUUID:[[NSUUID alloc] initWithUUIDString:@"E71E63CE-42A4-0F3D-43B3-E47C64344075"] identifier:@"regionIdentify"]];
+        [_broadCast setMeshWakeUp:[[CLBeaconRegion alloc] initWithProximityUUID:[[NSUUID alloc] initWithUUIDString:@"E71E63CE-42A4-0F3D-43B3-E47C64344075"] major:1 identifier:@"mesh"]];
         [_broadCast start];
     }
 }
@@ -114,7 +113,6 @@
 }
 
 - (void)bleScanner:(BLEScanner *)scanner didDiscoverUUID:(CBUUID *)uuid advertisementData:(NSData *)advertisementData RSSI:(NSNumber *)RSSI {
-    NSLog(@"%@_%@",[NSString stringWithUTF8String:advertisementData.bytes],uuid);
     void(^runOnMainThead)(void) = ^{
         self.labelOfReceive.text = [[NSString alloc] initWithData:advertisementData encoding:NSUTF8StringEncoding];
     };

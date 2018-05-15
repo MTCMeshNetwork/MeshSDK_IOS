@@ -7,8 +7,8 @@ MTC SDK开发包（MeshSDK）使用苹果的蓝牙协议，提供了蓝牙数据
 MTC SDK开发包需要手持设备硬件支持蓝牙4.0及其以上，并要求系统版本至少IOS7及其以上。 附：支持的IOS设备列表 iphone4s及以上、 itouch5及以上、 iPad3及以上、 iPad mini均可以 其他详情见：http://en.wikipedia.org/wiki/List_of_iOS_devices
 
 ### 集成指南
-- 打开Info.plist添加key：NSLocationAlwaysUsageDescription或者NSLocationWhenInUseUsageDescription，（填写描述如：用于Mesh唤醒）
-- 打开Info.plist添加key：UIBackgroundModes(bluetooth-central、bluetooth-peripheral)，添加后台使用蓝牙传输权限
+- 打开Info.plist添加key：NSLocationAlwaysAndWhenInUseUsageDescription、NSLocationAlwaysUsageDescription和NSLocationWhenInUseUsageDescription，（填写用户友好描述如：用于Mesh唤醒）
+- 打开Info.plist添加key：UIBackgroundModes(bluetooth-central、bluetooth-peripheral)，添加后台使用数据传输权限
 
 ### 常用API
 
@@ -37,8 +37,8 @@ WakeUpManager
 ```
 BLEBroadcast
 设置唤醒区域
-- (void)meshWakeUp:(CLBeaconRegion *)region;
-- (void)stopMeshWakeUp:(CLBeaconRegion *)region;
+- (void)setMeshWakeUp:(CLBeaconRegion *)region;
+- (void)removeMeshWakeUp:(CLBeaconRegion *)region;
 开启
 - (BOOL) start;
 ```

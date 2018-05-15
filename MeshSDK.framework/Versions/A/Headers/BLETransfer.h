@@ -10,12 +10,37 @@
 #import "BLEStorage.h"
 #import <CoreBluetooth/CoreBluetooth.h>
 
+/**
+    BLETransfer.
+*/
 @interface BLETransfer : NSObject
 
+/**
+    BLETransfer is not available for current version
+ */
 @property (nonatomic,readonly) id<BLEStorage> dataStorage;
 
+
+/**
+ * @method meshDataServiceUUID
+ *
+ * @discussion
+ *       defaultServiceUUID for BLEScanner. set yours to BLEScannerDelegate datasource
+ *
+ * @return defaultServiceUUID
+ */
 + (CBUUID *) meshDataServiceUUID;
 
+
+/**
+ * @method initWithDataStorage:
+ *
+ * @discussion
+ *  not available for current version, keep nil.
+ *
+ * @param dataStorage protocol for data storage.
+ * @return dataStorage instance
+ */
 - (instancetype) initWithDataStorage:(id<BLEStorage>)dataStorage;
 
 /**

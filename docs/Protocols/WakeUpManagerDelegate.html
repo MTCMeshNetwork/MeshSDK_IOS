@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>WakeUpManagerDelegate Protocol Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1333)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MeshSDK </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">mtc</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/wakeUpManager:didDetermineState:forRegion:">- wakeUpManager:didDetermineState:forRegion:</option>
+		
+		<option value="//api/name/wakeUpManager:didEnterRegion:">- wakeUpManager:didEnterRegion:</option>
+		
+		<option value="//api/name/wakeUpManager:didExitRegion:">- wakeUpManager:didExitRegion:</option>
+		
+		<option value="//api/name/wakeUpManager:monitoringDidFailForRegion:withError:">- wakeUpManager:monitoringDidFailForRegion:withError:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">WakeUpManagerDelegate Protocol Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Conforms to</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>WakeUpManager.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/wakeUpManager:monitoringDidFailForRegion:withError:" title="wakeUpManager:monitoringDidFailForRegion:withError:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/wakeUpManager:monitoringDidFailForRegion:withError:">&ndash;&nbsp;wakeUpManager:monitoringDidFailForRegion:withError:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@method wakeUpManager:monitoringDidFailForRegion:withError:</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)wakeUpManager:(WakeUpManager *)<em>manager</em> monitoringDidFailForRegion:(CLBeaconRegion *)<em>region</em> withError:(NSError *)<em>error</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>manager</code></th>
+						<td><p><a href="../Classes/WakeUpManager.html">WakeUpManager</a>.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>region</code></th>
+						<td><p>a monitored region</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>error</code></th>
+						<td><p>error.</p>
+
+<p>Discussion:
+Invoked when a region monitoring error has occurred.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method wakeUpManager:monitoringDidFailForRegion:withError:</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WakeUpManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/wakeUpManager:didEnterRegion:" title="wakeUpManager:didEnterRegion:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/wakeUpManager:didEnterRegion:">&ndash;&nbsp;wakeUpManager:didEnterRegion:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@method wakeUpManager:didEnterRegion:</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)wakeUpManager:(WakeUpManager *)<em>manager</em> didEnterRegion:(CLBeaconRegion *)<em>region</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>manager</code></th>
+						<td><p><a href="../Classes/WakeUpManager.html">WakeUpManager</a>.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>region</code></th>
+						<td><p>a monitored region</p>
+
+<p>Discussion:
+Invoked when the user enters a monitored region.  This callback will be invoked for every allocated
+<a href="../Classes/WakeUpManager.html">WakeUpManager</a> instance with a non-nil delegate that implements this method.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method wakeUpManager:didEnterRegion:</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WakeUpManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/wakeUpManager:didExitRegion:" title="wakeUpManager:didExitRegion:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/wakeUpManager:didExitRegion:">&ndash;&nbsp;wakeUpManager:didExitRegion:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@method wakeUpManager:didExitRegion:</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)wakeUpManager:(WakeUpManager *)<em>manager</em> didExitRegion:(CLBeaconRegion *)<em>region</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>manager</code></th>
+						<td><p><a href="../Classes/WakeUpManager.html">WakeUpManager</a>.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>region</code></th>
+						<td><p>a monitored region</p>
+
+<p>Discussion:
+Invoked when the user exits a monitored region.  This callback will be invoked for every allocated
+wakeUpManager instance with a non-nil delegate that implements this method.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method wakeUpManager:didExitRegion:</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WakeUpManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/wakeUpManager:didDetermineState:forRegion:" title="wakeUpManager:didDetermineState:forRegion:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/wakeUpManager:didDetermineState:forRegion:">&ndash;&nbsp;wakeUpManager:didDetermineState:forRegion:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>@method wakeUpManager:didDetermineState:forRegion:</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)wakeUpManager:(WakeUpManager *)<em>manager</em> didDetermineState:(CLRegionState)<em>state</em> forRegion:(CLBeaconRegion *)<em>region</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>manager</code></th>
+						<td><p><a href="../Classes/WakeUpManager.html">WakeUpManager</a>.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>state</code></th>
+						<td><p>region state</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>region</code></th>
+						<td><p>a monitored region</p>
+
+<p>Discussion:
+Invoked when there&rsquo;s a state transition for a monitored region or in response to a request for state via a
+a call to requestStateForRegion:.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@method wakeUpManager:didDetermineState:forRegion:</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">WakeUpManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 mtc. All rights reserved. Updated: 2018-05-15</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1333)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

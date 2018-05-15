@@ -7,13 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		581E353020A686B100A85EE0 /* RegionHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 581E352F20A686B100A85EE0 /* RegionHandler.m */; };
 		58476CBD2099642700D275C5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 58476CBC2099642700D275C5 /* AppDelegate.m */; };
 		58476CC02099642700D275C5 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58476CBF2099642700D275C5 /* ViewController.m */; };
 		58476CC52099642700D275C5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58476CC42099642700D275C5 /* Assets.xcassets */; };
 		58476CCB2099642700D275C5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 58476CCA2099642700D275C5 /* main.m */; };
+		58CCA28520AADFAA00976DD6 /* MeshSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58CCA28420AADFAA00976DD6 /* MeshSDK.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		581E352E20A686B100A85EE0 /* RegionHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegionHandler.h; sourceTree = "<group>"; };
+		581E352F20A686B100A85EE0 /* RegionHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegionHandler.m; sourceTree = "<group>"; };
 		58476CB82099642700D275C5 /* MeshDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MeshDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		58476CBB2099642700D275C5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		58476CBC2099642700D275C5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -22,6 +26,7 @@
 		58476CC42099642700D275C5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		58476CC92099642700D275C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		58476CCA2099642700D275C5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		58CCA28420AADFAA00976DD6 /* MeshSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MeshSDK.framework; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +34,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				58CCA28520AADFAA00976DD6 /* MeshSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,8 +62,11 @@
 			children = (
 				58476CBB2099642700D275C5 /* AppDelegate.h */,
 				58476CBC2099642700D275C5 /* AppDelegate.m */,
+				581E352E20A686B100A85EE0 /* RegionHandler.h */,
+				581E352F20A686B100A85EE0 /* RegionHandler.m */,
 				58476CBE2099642700D275C5 /* ViewController.h */,
 				58476CBF2099642700D275C5 /* ViewController.m */,
+				58CCA28420AADFAA00976DD6 /* MeshSDK.framework */,
 				58476CC42099642700D275C5 /* Assets.xcassets */,
 				58476CC92099642700D275C5 /* Info.plist */,
 				58476CCA2099642700D275C5 /* main.m */,
@@ -134,6 +143,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				581E353020A686B100A85EE0 /* RegionHandler.m in Sources */,
 				58476CC02099642700D275C5 /* ViewController.m in Sources */,
 				58476CCB2099642700D275C5 /* main.m in Sources */,
 				58476CBD2099642700D275C5 /* AppDelegate.m in Sources */,
@@ -251,9 +261,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = L2S5E9QH3S;
-				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)";
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)";
 				INFOPLIST_FILE = MeshDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -264,6 +275,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.o2o.MeshDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -272,9 +284,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = L2S5E9QH3S;
-				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)";
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)";
 				INFOPLIST_FILE = MeshDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -285,6 +298,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.o2o.MeshDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

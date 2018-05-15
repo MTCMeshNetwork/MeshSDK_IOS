@@ -7,8 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <MeshSDK/BLEManager.h>
 #import <CoreBluetooth/CoreBluetooth.h>
+#import <MeshSDK/BLEManager.h>
+#import <MeshSDK/BLEBroadcast.h>
 
 
 //! Project version number for mesh.
